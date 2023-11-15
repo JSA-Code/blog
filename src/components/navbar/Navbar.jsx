@@ -1,8 +1,29 @@
 import React from "react";
 import styles from "./navbar.module.css";
+import Link from "next/link";
+import AuthLinks from "@/components/authLinks/AuthLinks";
+import ThemeToggle from "@/components/themeToggle/ThemeToggle";
+import { FaFacebook, FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa";
 
-export const Navbar = () => {
-  return <div className={styles.container}>Navbar</div>;
+const Navbar = () => {
+  return (
+    <div className={styles.container}>
+      <div className={styles.social}></div>
+
+      <FaFacebook />
+      <FaInstagram />
+      <FaTiktok />
+      <FaYoutube />
+      <div className={styles.logo}>ExampleBlog</div>
+      <div className={styles.links}>
+        <ThemeToggle />
+        <Link href="/">Homepage</Link>
+        <Link href="/">Contact</Link>
+        <Link href="/">About</Link>
+        <AuthLinks />
+      </div>
+    </div>
+  );
 };
 
 export default Navbar;
