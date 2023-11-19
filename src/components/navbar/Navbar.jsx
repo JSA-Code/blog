@@ -8,12 +8,12 @@ import { FaFacebook, FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa";
 const Navbar = () => {
   return (
     <div className={styles.container}>
-      <div className={styles.social}></div>
-
-      <FaFacebook />
-      <FaInstagram />
-      <FaTiktok />
-      <FaYoutube />
+      <div className={styles.social}>
+        <FaFacebook />
+        <FaInstagram />
+        <FaTiktok />
+        <FaYoutube />
+      </div>
       <div className={styles.logo}>ExampleBlog</div>
       <div className={styles.links}>
         <ThemeToggle />
