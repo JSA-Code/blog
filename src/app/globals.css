@@ -1,8 +1,8 @@
 :root {
-  --bg: rgb(235, 235, 235);
+  --bg: #ebebeb;
   --textColor: #0d0d0d;
   --softBg: #f0f0f0;
-  --softTextColor: #626262;
+  --softTextColor: #5a5a5a;
 }
 
 * {
@@ -25,7 +25,7 @@ a {
   --bg: #1e2124;
   --textColor: #ddd;
   --softBg: #282b30;
-  --softTextColor: #a6a6a6;
+  --softTextColor: #b9b9b9;
 }
 
 .container {

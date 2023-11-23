@@ -13,11 +13,11 @@ const ThemeToggle = () => {
       onClick={toggle}
       style={
         theme === "dark"
-          ? { backgroundColor: "white" }
+          ? { backgroundColor: "#858585" }
           : { backgroundColor: "#0f172a" }
       }
     >
-      <FaMoon size={16} />
+      <FaMoon size={16} style={{ color: "#f2ca3a" }} />
       <div
         className={styles.ball}
         style={
@@ -26,7 +26,7 @@ const ThemeToggle = () => {
             : { right: 1, backgroundColor: "white" }
         }
       ></div>
-      <FaSun size={16} />
+      <FaSun size={theme === "dark" ? 16 : 8} style={{ color: "#ffd500" }} />
     </div>
   );
 };
