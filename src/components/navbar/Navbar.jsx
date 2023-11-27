@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./navbar.module.css";
 import Link from "next/link";
 import AuthLinks from "@/components/authLinks/AuthLinks";
