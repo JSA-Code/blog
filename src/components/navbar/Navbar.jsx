@@ -16,9 +16,10 @@ const social = [
 ];
 
 const navigation = [
-  { name: "Home", url: "/" },
-  { name: "Contact", url: "/contact" },
-  { name: "About", url: "/about" },
+  { name: "home", url: "/" },
+  { name: "blog", url: "/blog" },
+  { name: "contact", url: "/contact" },
+  { name: "about", url: "/about" },
 ];
 
 const Navbar = () => {

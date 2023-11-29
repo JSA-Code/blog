@@ -1,5 +1,5 @@
-import Link from "next/link";
 import styles from "./menuPosts.module.css";
+import Link from "next/link";
 import Image from "next/image";
 
 const MenuPosts = ({ posts, withImage }) => {
@@ -9,7 +9,7 @@ const MenuPosts = ({ posts, withImage }) => {
         <Link href={item.url} key={item.type} className={styles.item}>
           {withImage && (
             <div className={styles.imageContainer}>
-              <Image src="/next.svg" alt="" fill className={styles.image} />
+              <Image src="/comp.jpg" alt="" fill className={styles.image} />
             </div>
           )}
           <div className={styles.textContainer}>

@@ -1,0 +1,14 @@
+.containter {
+}
+
+.title {
+  background-color: chocolate;
+  color: var(--textColor);
+  padding: 5px 10px;
+  text-align: center;
+}
+
+.content {
+  display: flex;
+  gap: 50px;
+}

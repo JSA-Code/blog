@@ -3,12 +3,12 @@ import Link from "next/link";
 import Image from "next/image";
 
 const category = [
-  { type: "style", url: "/blog?category=style", img: "/next.svg" },
-  { type: "fashion", url: "/blog?category=fashion", img: "/next.svg" },
-  { type: "food", url: "/blog?category=food", img: "/next.svg" },
-  { type: "travel", url: "/blog?category=travel", img: "/next.svg" },
-  { type: "culture", url: "/blog?category=culture", img: "/next.svg" },
-  { type: "coding", url: "/blog?category=coding", img: "/next.svg" },
+  { type: "style", url: "/blog?category=style", img: "/comp.jpg" },
+  { type: "fashion", url: "/blog?category=fashion", img: "/comp.jpg" },
+  { type: "food", url: "/blog?category=food", img: "/comp.jpg" },
+  { type: "travel", url: "/blog?category=travel", img: "/comp.jpg" },
+  { type: "culture", url: "/blog?category=culture", img: "/comp.jpg" },
+  { type: "coding", url: "/blog?category=coding", img: "/comp.jpg" },
 ];
 
 const CategoryList = () => {
