@@ -1,0 +1,53 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+}
+
+.wrapper {
+  background-color: var(--softBg);
+  padding: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  border-radius: 10px;
+}
+
+.socialButton {
+  padding: 20px;
+  border-radius: 5px;
+  border: none;
+  color: var(--textColor);
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+}
+
+.socialButton:first-child {
+  background-color: #c54040;
+}
+
+.socialButton:nth-child(2) {
+  background-color: #1a1a1a;
+}
+
+.socialButton:nth-child(3) {
+  background-color: #458bcc;
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    padding: 50px 100px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .wrapper {
+    padding: 30px;
+  }
+
+  .socialButton {
+    font-size: 16px;
+  }
+}
