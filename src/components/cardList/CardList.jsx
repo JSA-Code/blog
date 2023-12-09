@@ -4,7 +4,7 @@ import Card from "@/components/card/Card";
 
 const getData = async (page) => {
   const res = await fetch(
-    `https://blog-fx41q9biz-jsa-code.vercel.app/api/posts?page=${page}`,
+    `${process.env.NEXTAUTH_URL}/api/posts?page=${page}`,
     {
       cache: "no-store",
     }

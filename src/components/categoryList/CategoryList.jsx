@@ -11,12 +11,9 @@ import Image from "next/image";
   { title: "coding", url: "/blog?category=coding", img: "/comp.jpg" },
 ]; */
 const getData = async () => {
-  const res = await fetch(
-    "https://blog-fx41q9biz-jsa-code.vercel.app/api/categories",
-    {
-      cache: "no-store",
-    }
-  );
+  const res = await fetch(`${process.env.NEXTAUTH_URL}/api/categories`, {
+    cache: "no-store",
+  });
 
   if (!res.ok) {
     throw new Error("failed");
