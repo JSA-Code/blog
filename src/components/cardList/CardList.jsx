@@ -3,9 +3,12 @@ import Pagination from "@/components/pagination/Pagination";
 import Card from "@/components/card/Card";
 
 const getData = async (page) => {
-  const res = await fetch(`http://localhost:3000/api/posts?page=${page}`, {
-    cache: "no-store",
-  });
+  const res = await fetch(
+    `https://blog-fx41q9biz-jsa-code.vercel.app/api/posts?page=${page}`,
+    {
+      cache: "no-store",
+    }
+  );
 
   if (!res.ok) {
     throw new Error("failed");

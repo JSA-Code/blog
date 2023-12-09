@@ -12,9 +12,12 @@ import Image from "next/image";
 ]; */
 
 const getData = async () => {
-  const res = await fetch("http://localhost:3000/api/categories", {
-    cache: "no-store",
-  });
+  const res = await fetch(
+    "https://blog-fx41q9biz-jsa-code.vercel.app/api/categories",
+    {
+      cache: "no-store",
+    }
+  );
 
   if (!res.ok) {
     throw new Error("failed");
