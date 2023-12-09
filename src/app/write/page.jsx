@@ -9,6 +9,8 @@ import {
 } from "react-icons/hi";
 import { useState } from "react";
 import "react-quill/dist/quill.bubble.css";
+import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
 
 const ReactQuill =
   typeof window === "object" ? require("react-quill") : () => false;
@@ -16,6 +18,18 @@ const ReactQuill =
 const Write = () => {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState("");
+  const { status } = useSession();
+  const router = useRouter();
+
+  if (status === "loading") {
+    return <div className={styles.loading}>Loading...</div>;
+  }
+
+  if (status === "unauthenticated") {
+    return (
+      <div className={styles.unauthenticated}>{router.push("/login")}</div>
+    );
+  }
 
   return (
     <div className={styles.container}>

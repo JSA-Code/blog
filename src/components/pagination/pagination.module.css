@@ -13,3 +13,8 @@
   cursor: pointer;
   border-radius: 10px;
 }
+
+.button:disabled {
+  background-color: #dc143c31;
+  cursor: not-allowed;
+}

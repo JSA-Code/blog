@@ -4,6 +4,7 @@ import Link from "next/link";
 import styles from "./authLinks.module.css";
 import { useState } from "react";
 import { HiMenu } from "react-icons/hi";
+import { useSession, signOut } from "next-auth/react";
 
 const navigation = [
   { name: "Home", url: "/" },
@@ -13,11 +14,12 @@ const navigation = [
 
 const AuthLinks = () => {
   const [open, setOpen] = useState(false);
-  const status = "auth";
+  const { status, data } = useSession();
+
   return (
     <>
       {/* Large Screen View */}
-      {status === "notauthenticated" ? (
+      {status === "unauthenticated" ? (
         <Link href="/login" className={styles.link}>
           Login
         </Link>
@@ -26,7 +28,9 @@ const AuthLinks = () => {
           <Link href="/write" className={styles.link}>
             Write
           </Link>
-          <span className={styles.link}>Logout</span>
+          <span className={styles.link} onClick={signOut}>
+            Logout
+          </span>
         </>
       )}
       {/* Mobile View */}
