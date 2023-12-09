@@ -10,7 +10,6 @@ import Image from "next/image";
   { title: "culture", url: "/blog?category=culture", img: "/comp.jpg" },
   { title: "coding", url: "/blog?category=coding", img: "/comp.jpg" },
 ]; */
-
 const getData = async () => {
   const res = await fetch(
     "https://blog-fx41q9biz-jsa-code.vercel.app/api/categories",
