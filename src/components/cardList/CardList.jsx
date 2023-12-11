@@ -2,9 +2,9 @@ import styles from "./cardList.module.css";
 import Pagination from "@/components/pagination/Pagination";
 import Card from "@/components/card/Card";
 
-const getData = async (page) => {
+const getData = async (page, category = "") => {
   const res = await fetch(
-    `${process.env.NEXTAUTH_URL}/api/posts?page=${page}`,
+    `${process.env.NEXTAUTH_URL}/api/posts?page=${page}&category=${category}`,
     {
       cache: "no-store",
     }
@@ -17,8 +17,8 @@ const getData = async (page) => {
   return res.json();
 };
 
-const CardList = async ({ page }) => {
-  const { posts, count } = await getData(page);
+const CardList = async ({ page, category }) => {
+  const { posts, count } = await getData(page, category);
   const POST_PER_PAGE = 2;
   const hasPrev = POST_PER_PAGE * (page - 1) > 0;
   const hasNext = POST_PER_PAGE * (page - 1) + POST_PER_PAGE < count;

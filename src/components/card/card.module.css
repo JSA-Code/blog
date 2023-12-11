@@ -34,7 +34,10 @@
   font-weight: 500;
 }
 
-.desc {
+.title {
+}
+
+.description {
   font-size: 18px;
   font-weight: 300;
   color: var(--softTextColor);

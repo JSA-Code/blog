@@ -8,6 +8,7 @@ const Pagination = ({ page, hasPrev, hasNext }) => {
 
   return (
     <div className={styles.container}>
+      {/* {hasPrev && ( */}
       <button
         className={styles.button}
         disabled={!hasPrev}
@@ -15,6 +16,7 @@ const Pagination = ({ page, hasPrev, hasNext }) => {
       >
         Previous
       </button>
+      {/* )} */}
       <button
         className={styles.button}
         disabled={!hasNext}

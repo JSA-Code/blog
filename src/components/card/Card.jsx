@@ -5,19 +5,26 @@ import Image from "next/image";
 const Card = ({ post }) => {
   return (
     <div className={styles.container}>
-      <div className={styles.imageContainer}>
-        <Image src="/comp.jpg" alt="" fill className={styles.image} />
-      </div>
+      {post.image && (
+        <div className={styles.imageContainer}>
+          <Image src={post.image} alt="" fill className={styles.image} />
+        </div>
+      )}
       <div className={styles.textContainer}>
         <div className={styles.detail}>
-          <span className={styles.date}>{post.createdAt}</span>
-          <span className={styles.category}>{post.category}</span>
+          <span className={styles.date}>
+            {post.createdAt.substring(0, 10)}
+            {" - "}
+          </span>
+          <span className={styles.category}>{post.categorySlug}</span>
         </div>
-        <Link href="/">
-          <h1 className="">{post.title}</h1>
+        <Link href={`/posts/${post.slug}`}>
+          <h1 className={styles.title}>{post.title}</h1>
         </Link>
-        <p className={styles.desc}>{post.description}</p>
-        <Link href="/" className={styles.link}>
+        <p className={styles.description}>
+          {post.description.substring(0, 60)}
+        </p>
+        <Link href={`/posts/${post.slug}`} className={styles.link}>
           Read More
         </Link>
       </div>
