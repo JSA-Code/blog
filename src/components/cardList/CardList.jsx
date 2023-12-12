@@ -4,14 +4,11 @@ import Card from "@/components/card/Card";
 
 const getData = async (page, category = "") => {
   const res = await fetch(
-    `${process.env.NEXTAUTH_URL}/api/posts?page=${page}&category=${category}`,
-    {
-      cache: "no-store",
-    }
+    `${process.env.NEXTAUTH_URL}/api/posts?page=${page}&category=${category}`
   );
 
   if (!res.ok) {
-    throw new Error("failed");
+    throw new Error("Failed to fetch posts!");
   }
 
   return res.json();

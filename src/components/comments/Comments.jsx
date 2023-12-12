@@ -11,7 +11,7 @@ const fetcher = async (url) => {
   const res = await fetch(url);
 
   if (!res.ok) {
-    throw new Error("Cannot fetch comments!");
+    throw new Error("Failed to fetch comments!");
   }
 
   return await res.json();

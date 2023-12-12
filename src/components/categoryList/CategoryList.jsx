@@ -11,12 +11,10 @@ import Image from "next/image";
   { title: "coding", url: "/blog?category=coding", img: "/comp.jpg" },
 ]; */
 const getData = async () => {
-  const res = await fetch(`${process.env.NEXTAUTH_URL}/api/categories`, {
-    cache: "no-store",
-  });
+  const res = await fetch(`${process.env.NEXTAUTH_URL}/api/categories`);
 
   if (!res.ok) {
-    throw new Error("failed");
+    throw new Error("Failed to fetch categorized posts!");
   }
 
   return res.json();

@@ -4,9 +4,7 @@ import Menu from "@/components/menu/Menu";
 import Comments from "@/components/comments/Comments";
 
 const getData = async (slug) => {
-  const res = await fetch(`${process.env.NEXTAUTH_URL}/api/posts/${slug}`, {
-    cache: "no-store",
-  });
+  const res = await fetch(`${process.env.NEXTAUTH_URL}/api/posts/${slug}`);
 
   if (!res.ok) {
     throw new Error("Failed to fetch data!");
@@ -52,7 +50,7 @@ const Single = async ({ params }) => {
         <div className={styles.post}>
           <div
             className={styles.description}
-            dangerouslySetInnerHTML={{ __html: post?.description || "" }}
+            dangerouslySetInnerHTML={{ __html: post?.description }}
           />
           <Comments postSlug={slug} />
         </div>
