@@ -1,6 +1,8 @@
 import styles from "./categoryList.module.css";
 import Link from "next/link";
 import Image from "next/image";
+import env from "@/utils/env";
+import type { Category } from "@prisma/client";
 
 /* const category = [
   { title: "style", url: "/blog?category=style", img: "/comp.jpg" },
@@ -10,8 +12,9 @@ import Image from "next/image";
   { title: "culture", url: "/blog?category=culture", img: "/comp.jpg" },
   { title: "coding", url: "/blog?category=coding", img: "/comp.jpg" },
 ]; */
+
 const getData = async () => {
-  const res = await fetch(`${process.env.NEXTAUTH_URL}/api/categories`);
+  const res = await fetch(`${env.NEXTAUTH_URL}/api/categories`);
 
   if (!res.ok) {
     throw new Error("Failed to fetch categorized posts!");
@@ -21,7 +24,7 @@ const getData = async () => {
 };
 
 const CategoryList = async () => {
-  const categories = await getData();
+  const categories: Category[] = await getData();
 
   return (
     <div className={styles.container}>

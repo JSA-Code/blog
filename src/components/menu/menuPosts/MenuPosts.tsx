@@ -2,7 +2,19 @@ import styles from "./menuPosts.module.css";
 import Link from "next/link";
 import Image from "next/image";
 
-const MenuPosts = ({ posts, withImage }) => {
+type Post = {
+  type: string;
+  url: string;
+  img: string;
+};
+
+const MenuPosts = ({
+  posts,
+  withImage,
+}: {
+  posts: Post[];
+  withImage: boolean;
+}) => {
   return (
     <div className={styles.items}>
       {posts.map((item) => (

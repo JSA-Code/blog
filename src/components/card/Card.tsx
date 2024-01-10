@@ -1,8 +1,9 @@
 import Link from "next/link";
 import styles from "./card.module.css";
 import Image from "next/image";
+import type { Post } from "@prisma/client";
 
-const Card = ({ post }) => {
+const Card = ({ post }: { post: Post }) => {
   return (
     <div className={styles.container}>
       {post.image && (
@@ -13,7 +14,7 @@ const Card = ({ post }) => {
       <div className={styles.textContainer}>
         <div className={styles.detail}>
           <span className={styles.date}>
-            {post.createdAt.substring(0, 10)}
+            {post.createdAt.toString().substring(0, 10)}
             {" - "}
           </span>
           <span className={styles.category}>{post.categorySlug}</span>

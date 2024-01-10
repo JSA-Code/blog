@@ -1,7 +1,13 @@
 import styles from "./menuCategories.module.css";
 import Link from "next/link";
 
-const MenuCategories = ({ posts }) => {
+type Post = {
+  type: string;
+  url: string;
+  img: string;
+};
+
+const MenuCategories = ({ posts }: { posts: Post[] }) => {
   return (
     <div className={styles.categoryList}>
       {posts.map((item) => (

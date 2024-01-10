@@ -3,7 +3,15 @@
 import { useRouter } from "next/navigation";
 import styles from "./pagination.module.css";
 
-const Pagination = ({ page, hasPrev, hasNext }) => {
+const Pagination = ({
+  page,
+  hasPrev,
+  hasNext,
+}: {
+  page: number;
+  hasPrev: boolean;
+  hasNext: boolean;
+}) => {
   const router = useRouter();
 
   return (

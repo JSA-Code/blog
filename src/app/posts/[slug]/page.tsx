@@ -1,10 +1,11 @@
 import Image from "next/image";
 import styles from "./single.module.css";
 import Menu from "@/components/menu/Menu";
-import Comments from "@/components/comments/Comments";
+// import Comments from "@/components/comments/Comments";
+import env from "@/utils/env";
 
-const getData = async (slug) => {
-  const res = await fetch(`${process.env.NEXTAUTH_URL}/api/posts/${slug}`);
+const getData = async (slug: string) => {
+  const res = await fetch(`${env.NEXTAUTH_URL}/api/posts/${slug}`);
 
   if (!res.ok) {
     throw new Error("Failed to fetch data!");
@@ -13,7 +14,7 @@ const getData = async (slug) => {
   return res.json();
 };
 
-const Single = async ({ params }) => {
+const Single = async ({ params }: { params: { slug: string } }) => {
   const { slug } = params;
   const post = await getData(slug);
   return (
@@ -52,7 +53,7 @@ const Single = async ({ params }) => {
             className={styles.description}
             dangerouslySetInnerHTML={{ __html: post?.description }}
           />
-          <Comments postSlug={slug} />
+          {/* <Comments postSlug={slug} /> */}
         </div>
         <Menu />
       </div>

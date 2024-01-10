@@ -1,7 +1,11 @@
 import styles from "./blog.module.css";
 import CardList from "@/components/cardList/CardList";
 
-const Blog = ({ searchParams }) => {
+const Blog = ({
+  searchParams,
+}: {
+  searchParams: { page: string; category: string };
+}) => {
   const page = parseInt(searchParams.page) || 1;
   const { category } = searchParams;
   return (

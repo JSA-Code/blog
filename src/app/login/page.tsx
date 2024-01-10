@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { signIn, useSession } from "next-auth/react";
 
 const Login = () => {
-  const { data, status } = useSession();
+  const { status } = useSession();
   const router = useRouter();
 
   if (status === "loading") {
